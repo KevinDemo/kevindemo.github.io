@@ -2,9 +2,9 @@
 
 Source of Kevin Chen's freelance homepage, served by GitHub Pages at https://kevindemo.github.io.
 
-Plain HTML and CSS with no build step, no framework, no JavaScript, and no analytics or trackers. The only external requests are Google Fonts. Light and dark modes follow the visitor's system setting.
+Plain HTML and CSS with no build step, no framework, and no analytics or trackers. The only external requests are Google Fonts. Two small inline scripts handle the theme switcher (System, Light, Dark) and the measurement bars; without JavaScript the page still works and follows the visitor's system setting.
 
-Two design directions are in this repo until one is picked. `index.html` with `styles.css` is Direction A (Waybill). `design-b/index.html` is Direction B (Almanac), self-contained and set to `noindex`. Delete the one that is not chosen; if B wins, move it to the root and remove its `noindex` line.
+The visual system is documented in `DESIGN.md`.
 
 To preview it, open `index.html` in a browser, or run `python -m http.server` in this folder.
 
