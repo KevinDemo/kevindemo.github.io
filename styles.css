@@ -787,3 +787,6 @@ h1 span:nth-child(2) { animation-delay: .08s; }
   .meter-track i, .tag::before { background: CanvasText; }
   .theme input:checked + span { background: Highlight; color: HighlightText; forced-color-adjust: none; }
 }
+
+.inline-link { color: inherit; text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 0.2em; }
+.inline-link:hover { text-decoration-color: currentColor; }
