@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kevin Chen - Senior .NET and SQL Server Engineer, Sydney</title>
+  <meta name="description" content="Senior .NET and SQL Server engineer in Sydney. I build and fix business software and add AI where it actually helps. Fixed price, written scope first.">
+  <meta name="author" content="Kevin Chen">
+  <!-- Design option under review: kept out of search so it does not compete with the main page. -->
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://kevindemo.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kevin Chen">
+  <meta property="og:url" content="https://kevindemo.github.io/">
+  <meta property="og:title" content="Kevin Chen - Senior .NET and SQL Server Engineer">
+  <meta property="og:description" content="I build and fix business software and add AI where it actually helps. Sydney based. Fixed price, written scope first.">
+  <meta name="twitter:card" content="summary">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#0f3d2e">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230f3d2e'/%3E%3Cpath d='M5 7v18M5 16l8-9M5 16l8 9M27 10.500C26 8 24 7 22.500 7 19 7 17 11 17 16s2 9 5.500 9c1.500 0 3.500-1 4.500-3.500' fill='none' stroke='%23e3b95c' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap">
+  <style>
+    /* Direction B: Almanac. A printed annual report: bottle green, brass, one
+       loud serif, wide margins and an off-centre grid. */
+
+    :root {
+      --page: #f3f1ea;
+      --ink: #16211c;
+      --muted: #4b5650;
+      --line: #c5c2b3;
+      --accent: #80590c;
+      --green: #0f3d2e;
+      --on-green: #f3f1ea;
+      --on-green-muted: #c3cfc7;
+      --brass: #e3b95c;
+      --on-brass: #0f2c22;
+      --display: Gloock, "Times New Roman", serif;
+      --body: "Source Serif 4", Georgia, serif;
+      --mono: "JetBrains Mono", Consolas, Menlo, monospace;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --page: #0e1a16;
+        --ink: #ece9de;
+        --muted: #a9b3ac;
+        --line: #33433c;
+        --accent: #e3b95c;
+        --green: #12402f;
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      color-scheme: light dark;
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font: 400 1.125rem/1.55 var(--body);
+      overflow-wrap: break-word;
+    }
+
+    h1, h2, h3, p, ol, ul, dl, dd, figure { margin: 0; padding: 0; }
+    ol, ul { list-style: none; }
+    h1, h2, h3 { font-family: var(--display); font-weight: 400; }
+    section[id] { scroll-margin-top: 1rem; }
+
+    a { color: inherit; }
+    a:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 3px;
+    }
+
+    .wrap { width: min(100% - 2.5rem, 80rem); margin-inline: auto; }
+
+    .sprite { position: absolute; }
+
+    .sr {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+
+    .ext { width: .65em; height: .65em; margin-left: .3em; }
+
+    .skip {
+      position: absolute;
+      left: 1rem;
+      top: -4rem;
+      z-index: 10;
+      padding: .75rem 1rem;
+      background: var(--brass);
+      color: var(--on-brass);
+    }
+    .skip:focus { top: 1rem; }
+
+    .kicker {
+      font: 400 .8125rem/1.4 var(--mono);
+      letter-spacing: .02em;
+    }
+
+    .textlink {
+      display: inline-block;
+      padding-block: .6rem;
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: .25em;
+      transition: text-decoration-thickness .15s;
+    }
+    .textlink:hover { text-decoration-thickness: 2px; }
+
+    /* Cover */
+
+    .cover { background: var(--green); color: var(--on-green); }
+
+    .masthead {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: .25rem 2rem;
+      padding-block: .75rem;
+      border-bottom: 1px solid var(--on-green-muted);
+    }
+
+    .mark {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      font: 400 1.375rem/1 var(--display);
+      text-decoration: none;
+    }
+
+    .masthead nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 1.25rem;
+      font: 400 .8125rem/1 var(--mono);
+    }
+    .masthead nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      text-decoration: none;
+      text-underline-offset: .35em;
+    }
+    .masthead nav a:hover { text-decoration: underline; }
+
+    .cover .kicker { margin-top: clamp(2.5rem, 7vw, 5rem); color: var(--on-green-muted); }
+
+    h1 {
+      max-width: 15.5em;
+      margin-top: 1rem;
+      font-size: clamp(2.6rem, 7vw, 6.25rem);
+      line-height: 1.03;
+      text-wrap: balance;
+      animation: arrive .7s cubic-bezier(.2, .7, .2, 1) both;
+    }
+    h1 em {
+      font: italic 300 1em/1.03 var(--body);
+      color: var(--brass);
+    }
+
+    .cover-grid {
+      display: grid;
+      gap: 2rem;
+      margin-top: clamp(2rem, 5vw, 3.5rem);
+      padding-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .lede { max-width: 34rem; font-size: 1.25rem; line-height: 1.5; }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem 1.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      min-height: 3.25rem;
+      padding: .75rem 1.5rem;
+      background: var(--brass);
+      color: var(--on-brass);
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color .15s;
+    }
+    .btn:hover { background: var(--on-green); }
+
+    .facts > div {
+      display: grid;
+      grid-template-columns: 7rem 1fr;
+      gap: 1rem;
+      padding-block: .6rem;
+      border-top: 1px solid color-mix(in srgb, var(--on-green-muted) 55%, transparent);
+    }
+    .facts dt { font: 400 .8125rem/1.7 var(--mono); color: var(--on-green-muted); }
+
+    .figures { border-top: 1px solid var(--on-green-muted); }
+    .figures dl {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      padding-block: 1.5rem 2rem;
+    }
+    .figures dd { font: 400 clamp(2.25rem, 5.5vw, 4rem)/1.05 var(--display); }
+    .figures dt { max-width: 14em; margin-top: .35rem; font-size: 1rem; line-height: 1.35; color: var(--on-green-muted); }
+    .figures div { display: flex; flex-direction: column-reverse; justify-content: flex-end; }
+
+    /* Chapter frame: heading in a narrow left column, content off-centre */
+
+    .chapter {
+      display: grid;
+      gap: 1.75rem;
+      padding-block: clamp(3.5rem, 8vw, 7rem) 0;
+    }
+
+    h2 { font-size: clamp(2.5rem, 5.5vw, 4rem); line-height: 1.05; }
+
+    .chapter-note { margin-top: .75rem; color: var(--muted); font-size: 1.0625rem; max-width: 26rem; }
+
+    /* Services */
+
+    .entries { display: grid; gap: 2.25rem; }
+
+    .entries li { border-top: 1px solid var(--ink); padding-top: .75rem; }
+    .entries .num { display: block; font: italic 300 1.25rem/1.4 var(--body); color: var(--accent); }
+    .entries h3 { margin-top: .25rem; font-size: 1.625rem; line-height: 1.15; }
+    .entries p { margin-top: .5rem; color: var(--muted); }
+    .entries .price { margin-top: .75rem; color: var(--ink); font: 400 1.75rem/1.2 var(--display); }
+    .entries .price small { font: italic 400 1.0625rem/1 var(--body); color: var(--muted); }
+
+    /* Features */
+
+    .features { display: grid; gap: 3.5rem; min-width: 0; }
+
+    .feature h3, .bench h3 { line-height: 1.15; }
+    .feature h3 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+    .feature h3 a, .bench h3 a {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-decoration-color: transparent;
+      text-underline-offset: .15em;
+      transition: text-decoration-color .15s;
+    }
+    .feature h3 a:hover, .bench h3 a:hover { text-decoration-color: currentColor; }
+    .feature > p { margin-top: .75rem; max-width: 40rem; }
+    .feature .stat {
+      margin-top: 1.5rem;
+      font: 400 clamp(3.5rem, 12vw, 8rem)/.95 var(--display);
+      color: var(--accent);
+    }
+    .feature .stat small {
+      display: block;
+      margin-top: .5rem;
+      font: italic 400 1.125rem/1.35 var(--body);
+      color: var(--muted);
+    }
+
+    .pair { margin-top: 1.5rem; }
+    .pair figcaption { font-weight: 600; font-size: 1rem; }
+    .pair-row { display: grid; grid-template-columns: 3.5rem 1fr 4.5rem; align-items: center; gap: .5rem; margin-top: .4rem; font-size: 1rem; }
+    .pair-key { color: var(--muted); }
+    .pair-val { text-align: right; font: 400 .875rem/1 var(--mono); }
+    .pair-track { display: block; height: .55rem; }
+    .pair-track i { display: block; height: 100%; min-width: 3px; }
+    .pair-before { background: var(--muted); }
+    .pair-after { background: var(--accent); }
+
+    /* On the bench */
+
+    .bench-head { margin-top: .5rem; padding-bottom: .5rem; font-size: 1.75rem; font-family: var(--display); }
+    .bench-intro { color: var(--muted); max-width: 40rem; padding-bottom: 1rem; }
+
+    .bench {
+      position: relative;
+      display: grid;
+      gap: .35rem;
+      padding-block: 1.1rem;
+      border-top: 1px solid var(--line);
+    }
+    .bench:last-child { border-bottom: 1px solid var(--line); }
+    .bench h3 { font-size: 1.375rem; }
+    .bench h3 a::after { content: ""; position: absolute; inset: 0; }
+    .bench p { color: var(--muted); }
+    .bench .status { font: italic 400 1rem/1.4 var(--body); color: var(--accent); }
+    .bench-extra { position: relative; z-index: 1; width: fit-content; }
+
+    /* Experience */
+
+    .statement { font: 400 clamp(1.875rem, 3.6vw, 3rem)/1.12 var(--display); max-width: 22em; }
+    .ledger { margin-top: 2rem; display: grid; }
+    .ledger li { padding-block: 1rem; border-top: 1px solid var(--line); }
+    .credentials { margin-top: 1rem; color: var(--muted); }
+
+    /* How I work */
+
+    .practice { counter-reset: practice; display: grid; gap: 1.75rem; }
+    .practice li { counter-increment: practice; display: grid; grid-template-columns: 2.75rem 1fr; }
+    .practice li::before {
+      content: counter(practice);
+      grid-row: span 2;
+      font: italic 300 2.25rem/1.1 var(--body);
+      color: var(--accent);
+    }
+    .practice h3 { font-size: 1.5rem; line-height: 1.2; }
+    .practice p { margin-top: .35rem; color: var(--muted); }
+
+    /* Contact */
+
+    .contact {
+      margin-top: clamp(4rem, 9vw, 8rem);
+      padding-block: clamp(3.5rem, 8vw, 6.5rem);
+      background: var(--green);
+      color: var(--on-green);
+    }
+    .contact h2 { max-width: 13em; font-size: clamp(2.5rem, 6.5vw, 5.5rem); }
+    .contact-note { max-width: 34rem; margin-top: 1.25rem; font-size: 1.25rem; color: var(--on-green-muted); }
+    .contact-mail {
+      display: inline-block;
+      margin-top: 1.5rem;
+      color: var(--brass);
+      font: 400 clamp(1.9rem, 8.8vw, 6.5rem)/1.1 var(--display);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: .12em;
+    }
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 1.75rem;
+      margin-top: 1rem;
+      font: 400 .875rem/1 var(--mono);
+    }
+    .contact-links a { display: inline-flex; align-items: center; min-height: 44px; text-underline-offset: .3em; }
+
+    .footer { padding-block: 1.5rem 2rem; color: var(--muted); font-size: 1rem; }
+
+    /* Wider layouts */
+
+    @media (min-width: 40rem) {
+      .figures dl { grid-template-columns: repeat(4, auto); justify-content: space-between; }
+      .entries { grid-template-columns: 1fr 1fr; gap: 2.75rem 2.5rem; padding-bottom: 3rem; }
+      .entries li:nth-child(even) { translate: 0 3rem; }
+      .practice { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+      .ledger { grid-template-columns: 1fr 1fr; column-gap: 2.5rem; }
+    }
+
+    @media (min-width: 60rem) {
+      .cover-grid { grid-template-columns: 7fr 5fr; gap: 4rem; align-items: start; }
+      .chapter { grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); gap: 3rem; }
+      .chapter-head { position: sticky; top: 2rem; align-self: start; }
+      .feature-grid { display: grid; grid-template-columns: 5fr 6fr; gap: 3rem; align-items: start; margin-top: 1.5rem; }
+      .feature-grid .pair:first-child, .feature .stat { margin-top: 0; }
+      .feature .stat { font-size: clamp(3.5rem, 5.5vw, 5.5rem); }
+      .bench { grid-template-columns: 5fr 6fr; column-gap: 3rem; }
+      .bench .status { grid-column: 1; grid-row: 2; }
+      .bench .desc { grid-column: 2; grid-row: 1 / span 2; }
+    }
+
+    @keyframes arrive {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+
+    @media (forced-colors: active) {
+      .pair-track i { background: CanvasText; }
+      .btn { border: 1px solid CanvasText; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <svg width="0" height="0" class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="ext" viewBox="0 0 12 12"><path d="M3 9l6-6M4 3h5v5" fill="none" stroke="currentColor" stroke-width="1.3"/></symbol>
+  </svg>
+
+  <div class="cover" id="top">
+    <header class="wrap masthead">
+      <a class="mark" href="#top">Kevin Chen</a>
+      <nav aria-label="Sections">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#how">How I work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+  </div>
+
+  <main id="main">
+  <div class="cover">
+    <div class="wrap">
+      <p class="kicker">Senior .NET and SQL Server engineer, Sydney</p>
+      <h1>I build and fix the software your business runs on, <em>and add AI where it actually helps.</em></h1>
+
+      <div class="cover-grid">
+        <div>
+          <p class="lede">I work with small and mid-size businesses and agencies. I use Claude Code daily to move fast, and I review and test every change myself. You get a written scope first, then a fixed price.</p>
+          <div class="actions">
+            <a class="btn" href="mailto:kevin@oct28th.com?subject=Project%20enquiry">Email me about a project</a>
+            <a class="textlink" href="#work">See the work</a>
+          </div>
+        </div>
+        <dl class="facts">
+          <div><dt>Certified</dt><dd>AZ-204 (2022), PSM I (2021)</dd></div>
+          <div><dt>Languages</dt><dd>English and Mandarin</dd></div>
+          <div><dt>Terms</dt><dd>Written scope first, then a fixed price</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <section class="figures" aria-label="Scale of past work">
+      <dl class="wrap">
+        <div><dt>years of C#/.NET on logistics systems</dt><dd>15</dd></div>
+        <div><dt>courier jobs a day, peaking above 5,300</dt><dd>2,000+</dd></div>
+        <div><dt>stored procedures in one SQL Server schema</dt><dd>1,700+</dd></div>
+        <div><dt>tracked migrations</dt><dd>1,600+</dd></div>
+      </dl>
+    </section>
+  </div>
+
+    <section class="wrap chapter" id="services" aria-labelledby="services-title">
+      <header class="chapter-head">
+        <h2 id="services-title">Services</h2>
+        <p class="chapter-note">Six services, each one scoped in writing and fixed-price before work starts.</p>
+      </header>
+      <!-- DRAFT PRICES: Kevin to confirm all six figures below before this goes live. -->
+      <ol class="entries">
+        <li>
+          <span class="num" aria-hidden="true">one</span>
+          <h3>AI integration and automation for existing systems</h3>
+          <p>Document extraction, support agents and AI features inside the app you already run.</p>
+          <p class="price"><small>from</small> US$800</p>
+        </li>
+        <li>
+          <span class="num" aria-hidden="true">two</span>
+          <h3>Workflow automation and integrations</h3>
+          <p>Stripe, accounting, email and webhooks connected properly, including replacing fragile Zapier and n8n flows.</p>
+          <p class="price"><small>from</small> US$300</p>
+        </li>
+        <li>
+          <span class="num" aria-hidden="true">three</span>
+          <h3>Full-stack web apps and internal dashboards</h3>
+          <p>React and TypeScript on the front, ASP.NET Core behind it.</p>
+          <p class="price"><small>from</small> US$2,500</p>
+        </li>
+        <li>
+          <span class="num" aria-hidden="true">four</span>
+          <h3>SQL Server performance health check</h3>
+          <p>Your most expensive queries, deadlocks and indexing problems, in a written report ranked by impact with scripts ready to review. Read-only access is enough.</p>
+          <p class="price"><small>from</small> US$350</p>
+        </li>
+        <li>
+          <span class="num" aria-hidden="true">five</span>
+          <h3>.NET Framework / WCF upgrade to modern .NET</h3>
+          <p>An assessment of your services, clients and dependencies, with a migration plan that keeps existing integrations working.</p>
+          <p class="price"><small>assessment from</small> US$500</p>
+        </li>
+        <li>
+          <span class="num" aria-hidden="true">six</span>
+          <h3>Rescue and finish</h3>
+          <p>I take over an unfinished or AI-generated codebase, stabilise it and add tests.</p>
+          <p class="price"><small>from</small> US$600</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="wrap chapter" id="work" aria-labelledby="work-title">
+      <header class="chapter-head">
+        <h2 id="work-title">Work</h2>
+        <p class="chapter-note">Public demos you can run yourself, built on a fictional courier company with invented data. Every number here was measured and is in the repo.</p>
+      </header>
+
+      <div class="features">
+        <article class="feature">
+          <h3><a href="https://github.com/KevinDemo/sqlserver-performance-demo" target="_blank" rel="noopener">SQL Server performance case study<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a></h3>
+          <p>Five common production problems reproduced, fixed and measured on a generated database of 600,000 jobs and 2.19M job events.</p>
+          <div class="feature-grid">
+            <p class="stat">20 to 0 <small>deadlocks. Two concurrent batches went from finishing none of 40,000 jobs to finishing all of them.</small></p>
+            <div>
+              <figure class="pair">
+                <figcaption>Parameter sniffing, logical reads for a large customer</figcaption>
+                <div class="pair-row"><span class="pair-key">Before</span><span class="pair-track"><i class="pair-before" style="width:100%"></i></span><span class="pair-val">360,172</span></div>
+                <div class="pair-row"><span class="pair-key">After</span><span class="pair-track"><i class="pair-after" style="width:1.78%"></i></span><span class="pair-val">6,399</span></div>
+              </figure>
+              <figure class="pair">
+                <figcaption>Implicit conversion, logical reads</figcaption>
+                <div class="pair-row"><span class="pair-key">Before</span><span class="pair-track"><i class="pair-before" style="width:100%"></i></span><span class="pair-val">2,918</span></div>
+                <div class="pair-row"><span class="pair-key">After</span><span class="pair-track"><i class="pair-after" style="width:0.21%"></i></span><span class="pair-val">6</span></div>
+              </figure>
+            </div>
+          </div>
+        </article>
+
+        <article class="feature">
+          <h3><a href="https://github.com/KevinDemo/wcf-to-modern-dotnet-migration" target="_blank" rel="noopener">WCF to modern .NET, without breaking a client<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a></h3>
+          <p>A .NET Framework 4.8 WCF service moved to ASP.NET Core with CoreWCF, plus a new REST API with OpenAPI on one shared application layer.</p>
+          <div class="feature-grid">
+            <p class="stat">27 of 27 <small>tests passed, none skipped.</small></p>
+            <div>
+              <p class="pair"><strong>One address changed.</strong> The compiled legacy client was pointed at the new host, and its output matched the old service line for line.</p>
+              <p class="pair">The tests replay SOAP traffic recorded from the real service. Breaking the contract on purpose failed 6 of them, which is the point.</p>
+            </div>
+          </div>
+        </article>
+
+        <div>
+          <p class="bench-head">On the bench</p>
+          <p class="bench-intro">Being built now. The repos fill in as each one is finished, and results go here once they are measured.</p>
+
+          <article class="bench">
+            <h3><a href="https://github.com/KevinDemo/ai-document-extraction" target="_blank" rel="noopener">AI document extraction<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a></h3>
+            <p class="status">In progress</p>
+            <div class="desc">
+              <p>Delivery dockets, invoices and booking emails turned into data, with schema validation and a human review queue.</p>
+              <!-- RESULT PLACEHOLDER (ai-document-extraction): put the real measured result line from the repo README here once the demo is finished. Do not invent a figure. Then remove "In progress". -->
+            </div>
+          </article>
+
+          <article class="bench">
+            <h3><a href="https://github.com/KevinDemo/ai-support-agent" target="_blank" rel="noopener">"Where is my parcel" support agent<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a></h3>
+            <p class="status">In progress</p>
+            <div class="desc">
+              <p>A support agent with tool calling, guardrails and an evaluation suite.</p>
+              <!-- RESULT PLACEHOLDER (ai-support-agent): put the real measured result line from the repo README here once the demo is finished. Do not invent a figure. Then remove "In progress". -->
+            </div>
+          </article>
+
+          <article class="bench">
+            <h3><a href="https://github.com/KevinDemo/courier-ops-dashboard" target="_blank" rel="noopener">Courier operations dashboard<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a></h3>
+            <p class="status">In progress</p>
+            <div class="desc">
+              <p>A full-stack operations dashboard on React 19, ASP.NET Core and SignalR.</p>
+              <!-- RESULT PLACEHOLDER (courier-ops-dashboard): put the real measured result line from the repo README here once the demo is finished. Do not invent a figure. Then remove "In progress". -->
+              <p class="bench-extra"><a class="textlink" href="https://kevindemo.github.io/courier-ops-dashboard/" target="_blank" rel="noopener">Live demo<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a></p>
+            </div>
+          </article>
+
+          <article class="bench">
+            <h3><a href="https://github.com/KevinDemo/webhook-automation-service" target="_blank" rel="noopener">Webhook automation service<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a></h3>
+            <p class="status">In progress</p>
+            <div class="desc">
+              <p>Reliable Stripe to accounting to email automation with idempotency, an outbox, retries and dead-letter replay.</p>
+              <!-- RESULT PLACEHOLDER (webhook-automation-service): put the real measured result line from the repo README here once the demo is finished. Do not invent a figure. Then remove "In progress". -->
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap chapter" id="experience" aria-labelledby="experience-title">
+      <header class="chapter-head">
+        <h2 id="experience-title">Experience</h2>
+      </header>
+      <div>
+        <p class="statement">15 years of C#/.NET on logistics systems that cannot go down, including for a New Zealand courier and logistics operator.</p>
+        <ul class="ledger">
+          <li>Backend architecture owner for a multi-tenant transport management platform moving over 2,000 courier jobs a day, peaking above 5,300.</li>
+          <li>A SQL Server schema of 1,700+ stored procedures, evolved through 1,600+ tracked migrations.</li>
+          <li>Diagnosed recurring SQL Server deadlocks under bulk upload and fixed them with a targeted batch-commit retry.</li>
+          <li>Migrated a WCF-era customer integration API to .NET 8, keeping the legacy bindings live.</li>
+          <li>Led a ground-up rewrite of a route-planning system on .NET 10 and TypeScript, verified with Playwright tests.</li>
+          <li>Moved CI from Azure DevOps to GitLab CI and containerised services with Docker across eight repositories.</li>
+        </ul>
+        <p class="credentials"><a class="textlink" href="https://kevindemo.github.io/cv/" target="_blank" rel="noopener">Read the full CV<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a></p>
+      </div>
+    </section>
+
+    <section class="wrap chapter" id="how" aria-labelledby="how-title">
+      <header class="chapter-head">
+        <h2 id="how-title">How I work</h2>
+      </header>
+      <ol class="practice">
+        <li>
+          <h3>Written scope and fixed price first</h3>
+          <p>You know what you are getting and what it costs before I start. If the scope changes, we agree it in writing first.</p>
+        </li>
+        <li>
+          <h3>Claude Code for speed, me for judgement</h3>
+          <p>I use Claude Code daily because it makes me faster. Every change is reviewed and tested by me before it reaches you.</p>
+        </li>
+        <li>
+          <h3>A clear handover</h3>
+          <p>You get the code, the scripts and notes your team can follow, so you are not dependent on me afterwards.</p>
+        </li>
+        <li>
+          <h3>Sydney time zone</h3>
+          <p>My working day overlaps Australia, New Zealand and US evenings.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <h2 id="contact-title">Tell me what is slow, old or stuck</h2>
+        <p class="contact-note">A short description of the system and the problem is enough to start. I will tell you honestly whether I am the right fit.</p>
+        <p><a class="contact-mail" href="mailto:kevin@oct28th.com?subject=Project%20enquiry">kevin@oct28th.com</a></p>
+        <p class="contact-links">
+          <a href="https://github.com/KevinDemo" target="_blank" rel="noopener">GitHub<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a>
+          <a href="https://kevindemo.github.io/cv/" target="_blank" rel="noopener">CV<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a>
+          <!-- Upwork profile link goes here once the profile exists, for example: <a href="UPWORK_PROFILE_URL" target="_blank" rel="noopener">Upwork</a> -->
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <p>Kevin Chen, Sydney. Demo projects use a fictional company and invented data.</p>
+  </footer>
+</body>
+</html>
