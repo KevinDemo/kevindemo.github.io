@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kevin Chen - Lead .NET and SQL Server Engineer, Sydney</title>
+  <meta name="description" content="Fixed-price SQL Server performance reviews, .NET Framework and WCF upgrades, and REST API integrations from a Lead .NET engineer with 15 years on production logistics systems.">
+  <meta name="author" content="Kevin Chen">
+  <link rel="canonical" href="https://kevindemo.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kevindemo.github.io/">
+  <meta property="og:title" content="Kevin Chen - Lead .NET and SQL Server Engineer">
+  <meta property="og:description" content="Fixed-price SQL Server performance reviews, .NET Framework and WCF upgrades, and REST API integrations. Based in Sydney.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23c8421b'/%3E%3Cpath d='M9 7v18M9 16h6l7-9M15 16l7 9' stroke='%23fff' stroke-width='3' fill='none'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="masthead">
+    <div class="wrap masthead-row">
+      <a class="mark" href="#top">Kevin Chen</a>
+      <nav aria-label="Sections">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#how">How I work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" id="top">
+      <p class="eyebrow">Sydney <span aria-hidden="true">/</span> Available for fixed-price projects</p>
+      <h1>Kevin (Ning) Chen</h1>
+      <p class="lede">Lead .NET and SQL Server engineer. I make slow databases fast and move old .NET systems forward, without taking them offline.</p>
+      <div class="actions">
+        <a class="button" href="mailto:chenning.0515@gmail.com?subject=Project%20enquiry">Email me about a project</a>
+        <a class="link" href="https://kevindemo.github.io/cv/">Read my CV</a>
+      </div>
+      <dl class="facts">
+        <div><dt>Experience</dt><dd>15 years of C#/.NET and SQL Server</dd></div>
+        <div><dt>Certified</dt><dd>AZ-204 (2022), PSM I (2021)</dd></div>
+        <div><dt>Languages</dt><dd>English and Mandarin</dd></div>
+      </dl>
+    </section>
+
+    <section class="band" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <h2 id="services-title">Services</h2>
+        <p class="section-note">Three fixed-price offers. The scope is agreed in writing before any work starts.</p>
+        <ol class="offers">
+          <li>
+            <h3>SQL Server Performance Health Check</h3>
+            <p>I find your most expensive queries, deadlocks and indexing problems, then give you a ranked report with scripts ready to review.</p>
+            <p class="price">from <strong>US$350</strong></p>
+          </li>
+          <li>
+            <h3>.NET Framework / WCF to .NET 8 Upgrade</h3>
+            <p>An assessment of your services, clients and dependencies, with a migration plan that keeps existing integrations working.</p>
+            <p class="price">assessment from <strong>US$500</strong></p>
+          </li>
+          <li>
+            <h3>REST API and Integration</h3>
+            <p>A well-documented REST API, or a reliable connection between your system and a third party, with tests and error handling included.</p>
+            <p class="price">from <strong>US$300</strong></p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="wrap" id="work" aria-labelledby="work-title">
+      <h2 id="work-title">Selected work</h2>
+      <p class="section-note">Two public demos you can run yourself, built on a fictional courier company. Every number below was measured and is in the repo.</p>
+
+      <div class="cases">
+        <article class="case">
+          <h3><a href="https://github.com/KevinDemo/sqlserver-performance-demo">SQL Server performance case study</a></h3>
+          <p>Five common production problems reproduced, fixed and measured on a database with over 2 million rows in its largest table.</p>
+          <figure class="meter" aria-label="Logical reads for one customer query: 360,172 before the fix and 6,399 after">
+            <figcaption>Parameter sniffing, logical reads</figcaption>
+            <div class="bar before" style="--w:100%"><span>360,172 before</span></div>
+            <div class="bar after" style="--w:1.8%"><span>6,399 after</span></div>
+          </figure>
+          <figure class="meter" aria-label="Logical reads for a consignment lookup: 2,918 before the fix and 6 after">
+            <figcaption>Implicit conversion, logical reads</figcaption>
+            <div class="bar before" style="--w:100%"><span>2,918 before</span></div>
+            <div class="bar after" style="--w:0.2%"><span>6 after</span></div>
+          </figure>
+          <p class="outcome"><strong>20 deadlocks to 0.</strong> Two concurrent batches went from losing work in every round to processing all 40,000 jobs.</p>
+          <a class="link" href="https://github.com/KevinDemo/sqlserver-performance-demo">See the code and results</a>
+        </article>
+
+        <article class="case">
+          <h3><a href="https://github.com/KevinDemo/wcf-to-modern-dotnet-migration">WCF to modern .NET migration</a></h3>
+          <p>A .NET Framework 4.8 WCF service moved to ASP.NET Core with CoreWCF, plus a new REST API with OpenAPI on the same application layer.</p>
+          <p class="big-figure"><strong>27 of 27</strong> <span>tests passed, none skipped</span></p>
+          <p class="outcome"><strong>One line changed for the old client.</strong> The compiled .NET Framework client was pointed at the new host by changing its address, and its output matched the old service line for line.</p>
+          <p class="outcome">The tests replay SOAP traffic recorded from the real legacy service. Breaking the contract on purpose made them fail, which is the point.</p>
+          <a class="link" href="https://github.com/KevinDemo/wcf-to-modern-dotnet-migration">See the code and tests</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="band" id="experience" aria-labelledby="experience-title">
+      <div class="wrap">
+        <h2 id="experience-title">Experience highlights</h2>
+        <p class="section-note">15 years of C#/.NET on logistics systems that cannot go down, including work for a New Zealand courier and logistics operator.</p>
+        <ul class="highlights">
+          <li><strong>2,000+ jobs a day.</strong> Backend architecture owner for a multi-tenant transport management platform moving over 2,000 courier jobs a day, peaking above 5,300.</li>
+          <li><strong>1,700+ stored procedures.</strong> A SQL Server schema of that size, evolved through 1,600+ tracked migrations.</li>
+          <li><strong>Deadlocks fixed.</strong> Diagnosed recurring SQL Server deadlocks under bulk upload and fixed them with a targeted batch-commit retry.</li>
+          <li><strong>No customer had to change.</strong> Migrated a WCF-era customer integration API to .NET 8 and kept the legacy bindings live throughout.</li>
+          <li><strong>Ground-up rewrite.</strong> Led a rewrite of a route-planning system on .NET 10 and TypeScript, verified with Playwright tests.</li>
+          <li><strong>Eight repositories.</strong> Moved CI from Azure DevOps to GitLab CI and containerised the services with Docker.</li>
+        </ul>
+        <p><a class="link" href="https://kevindemo.github.io/cv/">Read the full CV</a></p>
+      </div>
+    </section>
+
+    <section class="wrap" id="how" aria-labelledby="how-title">
+      <h2 id="how-title">How I work</h2>
+      <ol class="steps">
+        <li>
+          <h3>Written scope and fixed price first</h3>
+          <p>You know what you are getting and what it costs before I start. If the scope changes, we agree it in writing first.</p>
+        </li>
+        <li>
+          <h3>Claude Code for speed, me for judgement</h3>
+          <p>I use Claude Code daily because it makes me faster. Every change is reviewed and tested by me before it reaches you.</p>
+        </li>
+        <li>
+          <h3>A clear handover</h3>
+          <p>You get the code, the scripts and notes your team can follow, so you are not dependent on me afterwards.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <h2 id="contact-title">Tell me what is slow, old or stuck</h2>
+        <p>A short description of the system and the problem is enough to start. I will tell you honestly whether I am the right fit.</p>
+        <p><a class="contact-mail" href="mailto:chenning.0515@gmail.com?subject=Project%20enquiry">chenning.0515@gmail.com</a></p>
+        <p class="contact-links">
+          <a href="https://github.com/KevinDemo">GitHub</a>
+          <a href="https://kevindemo.github.io/cv/">CV</a>
+          <!-- Upwork profile link goes here once the profile exists, for example: <a href="UPWORK_PROFILE_URL">Upwork</a> -->
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <p>Kevin Chen, Sydney. Demo projects use a fictional company and invented data.</p>
+  </footer>
+</body>
+</html>
