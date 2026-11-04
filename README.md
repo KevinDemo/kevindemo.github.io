@@ -1,6 +1,6 @@
 # kevindemo.github.io
 
-Source of Kevin Chen's freelance homepage, served by GitHub Pages at https://kevindemo.github.io.
+Source of Kevin Chen's freelance homepage, served by GitHub Pages at https://oct28th.com.
 
 Plain HTML and CSS with no build step, no framework, and no analytics or trackers. The only external requests are Google Fonts. Two small inline scripts handle the theme switcher (System, Light, Dark) and the measurement bars; without JavaScript the page still works and follows the visitor's system setting.
 
