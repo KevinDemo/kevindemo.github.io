@@ -149,10 +149,32 @@
       <div class="wrap">
         <header class="top-head">
           <h2 id="work-title">Work</h2>
-          <p class="note">Public demos you can run yourself (all of them at <a class="inline-link" href="https://demo.oct28th.com/" target="_blank" rel="noopener">demo.oct28th.com</a>), built on a fictional courier company with invented data. Every number here was measured and is in the repo.</p>
+          <p class="note">A working courier operations system you can sign into with one click, then six earlier single-purpose demos (all at <a class="inline-link" href="https://demo.oct28th.com/" target="_blank" rel="noopener">demo.oct28th.com</a>). Everything runs on a fictional courier company with invented data. Every number here was measured.</p>
         </header>
 
         <div class="cases">
+
+          <article class="case case-wide">
+            <div class="case-copy">
+              <div class="case-head">
+                <h3><a href="https://transit.oct28th.com/" target="_blank" rel="noopener">Kevin Transit: courier operations system<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a></h3>
+                <p class="tag">Phase 1 live</p>
+              </div>
+              <a class="case-shot" href="https://transit.oct28th.com/" target="_blank" rel="noopener" aria-label="Open the Kevin Transit live demo (opens in a new tab)">
+                <img class="shot-light" src="img/kevin-transit-light.webp" width="960" height="600" loading="lazy" decoding="async" alt="Screenshot of the Kevin Transit dispatch board with four columns of delivery cards">
+                <img class="shot-dark" src="img/kevin-transit-dark.webp" width="960" height="600" loading="lazy" decoding="async" alt="Screenshot of the Kevin Transit dispatch board in dark mode">
+              </a>
+              <p>A small Sydney courier firm run end to end. Customers get a quote, pay and follow the parcel. Dispatchers assign drivers on a live board. Drivers finish each job on their phone with a photo and a signature. Sign in as a customer, dispatcher, driver or admin with one click.</p>
+              <p class="result"><strong>Built to be used, not shown.</strong> Orders follow one state machine that rejects illegal moves and writes an audit record for every change. ASP.NET Core 10 with EF Core and stored procedures, SQL Server, SignalR, React and TypeScript, all in containers with settings in environment variables.</p>
+              <p class="case-extra"><a class="textlink" href="https://transit.oct28th.com/" target="_blank" rel="noopener">Live demo<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a></p>
+            </div>
+            <div class="case-proof">
+              <p class="result"><strong>Live updates in about 0.3 seconds.</strong> A dispatcher assigns a job in one browser and a second window shows it in 290 to 330 ms. The end-to-end test measures this against the live site and fails at one second.</p>
+              <p class="result"><strong>600,000 orders and 4.2 million events to search.</strong> Searching by order number takes about 0.14 s and a free-text search about 0.7 s, measured over the internet. The first search after a quiet spell is slower.</p>
+              <p class="result"><strong>Free hosting, on purpose.</strong> Cloudflare Pages, Azure App Service free tier and the Azure SQL free tier. The demo sleeps when idle and says so while it wakes up. Payments use a test card and emails land in an in-app inbox, so nothing real is sent. The code is in a private repository.</p>
+            </div>
+          </article>
+
           <article class="case case-wide">
             <div class="case-copy">
               <div class="case-head">
@@ -181,88 +203,19 @@
             </div>
           </article>
 
-          <article class="case case-7">
-            <div class="case-head">
-              <h3><a href="https://github.com/KevinDemo/wcf-to-modern-dotnet-migration" target="_blank" rel="noopener">WCF to modern .NET, without breaking a client<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a></h3>
-              <p class="tag">Delivered</p>
-            </div>
-            <a class="case-shot" href="https://demo.oct28th.com/wcf-to-modern-dotnet-migration/" target="_blank" rel="noopener" aria-label="Open the WCF migration results live demo (opens in a new tab)">
-              <img class="shot-light" src="img/wcf-to-modern-dotnet-migration-light.webp" width="960" height="600" loading="lazy" decoding="async" alt="Screenshot of the WCF migration results">
-              <img class="shot-dark" src="img/wcf-to-modern-dotnet-migration-dark.webp" width="960" height="600" loading="lazy" decoding="async" alt="Screenshot of the WCF migration results">
-            </a>
-            <p>A .NET Framework 4.8 WCF service moved to ASP.NET Core with CoreWCF, plus a new REST API with OpenAPI on one shared application layer.</p>
-            <div class="case-after">
-              <p class="result"><strong>One address changed.</strong> The compiled legacy client was pointed at the new host, and its output matched the old service line for line.</p>
-              <p class="result">The tests replay SOAP traffic recorded from the real service. Breaking the contract on purpose failed 6 of them, which is the point.</p>
-              <p class="case-extra"><a class="textlink" href="https://demo.oct28th.com/wcf-to-modern-dotnet-migration/" target="_blank" rel="noopener">Results<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a></p>
-            </div>
-          </article>
 
-          <article class="case case-5">
-            <div class="case-head">
-              <h3><a href="https://github.com/KevinDemo/ai-document-extraction" target="_blank" rel="noopener">AI document extraction<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a></h3>
-              <p class="tag">Delivered</p>
-            </div>
-            <a class="case-shot" href="https://demo.oct28th.com/ai-document-extraction/" target="_blank" rel="noopener" aria-label="Open the AI document extraction review queue live demo (opens in a new tab)">
-              <img class="shot-light" src="img/ai-document-extraction-light.webp" width="960" height="600" loading="lazy" decoding="async" alt="Screenshot of the AI document extraction review queue">
-              <img class="shot-dark" src="img/ai-document-extraction-dark.webp" width="960" height="600" loading="lazy" decoding="async" alt="Screenshot of the AI document extraction review queue">
-            </a>
-            <p>Delivery dockets, invoices and booking emails turned into data, with schema validation and a human review queue.</p>
-            <div class="case-after">
-              <p class="result"><strong>Doubtful documents go to a person.</strong> Of 7 sample dockets, invoices and emails, 3 were accepted automatically and 4 went to review, including a wrong GST line. Runs offline with recorded model responses.</p>
-              <p class="case-extra"><a class="textlink" href="https://demo.oct28th.com/ai-document-extraction/" target="_blank" rel="noopener">Live demo<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a></p>
-            </div>
-          </article>
 
-          <article class="case case-5">
-            <div class="case-head">
-              <h3><a href="https://github.com/KevinDemo/ai-support-agent" target="_blank" rel="noopener">"Where is my parcel" support agent<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a></h3>
-              <p class="tag">Delivered</p>
-            </div>
-            <a class="case-shot" href="https://demo.oct28th.com/ai-support-agent/" target="_blank" rel="noopener" aria-label="Open the Support agent chat live demo (opens in a new tab)">
-              <img class="shot-light" src="img/ai-support-agent-light.webp" width="960" height="600" loading="lazy" decoding="async" alt="Screenshot of the Support agent chat">
-              <img class="shot-dark" src="img/ai-support-agent-dark.webp" width="960" height="600" loading="lazy" decoding="async" alt="Screenshot of the Support agent chat">
-            </a>
-            <p>A support agent with tool calling, guardrails and an evaluation suite.</p>
-            <div class="case-after">
-              <p class="result"><strong>Guardrails live in code.</strong> Identity checks and explicit yes for any change hold even when a scripted model is fooled into trying.</p>
-              <p class="case-extra"><a class="textlink" href="https://demo.oct28th.com/ai-support-agent/" target="_blank" rel="noopener">Live demo<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a></p>
-            </div>
-          </article>
+        </div>
 
-          <article class="case case-7">
-            <div class="case-head">
-              <h3><a href="https://github.com/KevinDemo/courier-ops-dashboard" target="_blank" rel="noopener">Courier operations dashboard<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a></h3>
-              <p class="tag">Delivered</p>
-            </div>
-            <a class="case-shot" href="https://demo.oct28th.com/courier-ops-dashboard/" target="_blank" rel="noopener" aria-label="Open the Courier operations dashboard live demo (opens in a new tab)">
-              <img class="shot-light" src="img/courier-ops-dashboard-light.webp" width="960" height="600" loading="lazy" decoding="async" alt="Screenshot of the Courier operations dashboard">
-              <img class="shot-dark" src="img/courier-ops-dashboard-dark.webp" width="960" height="600" loading="lazy" decoding="async" alt="Screenshot of the Courier operations dashboard">
-            </a>
-            <p>A full-stack operations dashboard on React 19, ASP.NET Core and SignalR.</p>
-            <div class="case-after">
-              <p class="result"><strong>One live screen for today.</strong> KPIs, a server-paged jobs table and SignalR updates. The live demo runs in your browser on fictional data.</p>
-              <p class="case-extra"><a class="textlink" href="https://demo.oct28th.com/courier-ops-dashboard/" target="_blank" rel="noopener">Live demo<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a></p>
-            </div>
-          </article>
-
-          <article class="case case-wide">
-            <div class="case-copy">
-              <div class="case-head">
-                <h3><a href="https://github.com/KevinDemo/webhook-automation-service" target="_blank" rel="noopener">Webhook automation service<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a></h3>
-                <p class="tag">Delivered</p>
-              </div>
-              <a class="case-shot" href="https://demo.oct28th.com/webhook-automation-service/" target="_blank" rel="noopener" aria-label="Open the Webhook replay admin page live demo (opens in a new tab)">
-                <img class="shot-light" src="img/webhook-automation-service-light.webp" width="960" height="600" loading="lazy" decoding="async" alt="Screenshot of the Webhook replay admin page">
-                <img class="shot-dark" src="img/webhook-automation-service-dark.webp" width="960" height="600" loading="lazy" decoding="async" alt="Screenshot of the Webhook replay admin page">
-              </a>
-              <p>Reliable Stripe to accounting to email automation with idempotency, an outbox, retries and dead-letter replay.</p>
-              <p class="case-extra"><a class="textlink" href="https://demo.oct28th.com/webhook-automation-service/" target="_blank" rel="noopener">Live demo<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a></p>
-            </div>
-            <div class="case-proof">
-              <p class="result"><strong>Exactly once, under load.</strong> 1,100 requests with 100 duplicates and 32 in parallel produced exactly one invoice, row and receipt per event, with zero dead letters, in 4 of 4 runs.</p>
-            </div>
-          </article>
+        <div class="older">
+          <h3 class="older-title">Earlier single-purpose demos</h3>
+          <ul class="older-list">
+            <li><a class="textlink" href="https://github.com/KevinDemo/wcf-to-modern-dotnet-migration" target="_blank" rel="noopener">WCF to modern .NET<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a><span>A .NET Framework 4.8 WCF service moved to ASP.NET Core with CoreWCF and a new REST API, without breaking the old client.</span><a class="textlink" href="https://demo.oct28th.com/wcf-to-modern-dotnet-migration/" target="_blank" rel="noopener">Results<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a></li>
+            <li><a class="textlink" href="https://github.com/KevinDemo/ai-document-extraction" target="_blank" rel="noopener">AI document extraction<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a><span>Dockets, invoices and emails turned into data, with a human review queue for the doubtful ones.</span><a class="textlink" href="https://demo.oct28th.com/ai-document-extraction/" target="_blank" rel="noopener">Live demo<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a></li>
+            <li><a class="textlink" href="https://github.com/KevinDemo/ai-support-agent" target="_blank" rel="noopener">Support agent<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a><span>"Where is my parcel" chat with tool calling, guardrails in code and an evaluation suite.</span><a class="textlink" href="https://demo.oct28th.com/ai-support-agent/" target="_blank" rel="noopener">Live demo<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a></li>
+            <li><a class="textlink" href="https://github.com/KevinDemo/courier-ops-dashboard" target="_blank" rel="noopener">Courier operations dashboard<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a><span>React 19, ASP.NET Core and SignalR: live KPIs and a server-paged jobs table on fictional data.</span><a class="textlink" href="https://demo.oct28th.com/courier-ops-dashboard/" target="_blank" rel="noopener">Live demo<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a></li>
+            <li><a class="textlink" href="https://github.com/KevinDemo/webhook-automation-service" target="_blank" rel="noopener">Webhook automation service<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a><span>Stripe to accounting to email with idempotency, an outbox, retries and dead-letter replay.</span><a class="textlink" href="https://demo.oct28th.com/webhook-automation-service/" target="_blank" rel="noopener">Live demo<svg class="ext" aria-hidden="true" focusable="false"><use href="#ext"/></svg><span class="sr"> (opens in a new tab)</span></a></li>
+          </ul>
         </div>
       </div>
     </section>

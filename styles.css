@@ -549,6 +549,24 @@ h1 span:nth-child(2) { animation-delay: .08s; }
 .case-extra { position: relative; z-index: 1; width: fit-content; margin-top: var(--s-2); }
 
 .case-proof { margin-top: var(--s-10); }
+
+/* Work: earlier demos as a plain ruled list. */
+
+.older { padding-block: clamp(var(--s-12), 6vw, var(--s-20)) clamp(var(--s-12), 6vw, var(--s-20)); }
+.older-title { font-size: var(--t-body); font-weight: 500; letter-spacing: -.005em; }
+.older-list { list-style: none; margin: var(--s-6) 0 0; padding: 0; border-top: 1px solid var(--line); }
+.older-list li {
+  display: grid;
+  gap: var(--s-2) var(--s-8);
+  padding-block: var(--s-4);
+  border-bottom: 1px solid var(--line);
+}
+.older-list li > span { color: var(--ink-2); }
+.older-list li > a { width: fit-content; }
+@media (min-width: 48rem) {
+  .older-list li { grid-template-columns: minmax(13rem, 1fr) 2fr 7.5rem; align-items: baseline; }
+}
+
 .case-proof .bigfig { padding-top: 0; }
 
 /* Measurement */
