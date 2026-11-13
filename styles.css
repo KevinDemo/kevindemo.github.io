@@ -547,7 +547,6 @@ h1 span:nth-child(2) { animation-delay: .08s; }
 }
 
 .case-extra { position: relative; z-index: 1; width: fit-content; margin-top: var(--s-2); }
-.demo-note { color: var(--ink-2); margin-left: var(--s-2); }
 
 .case-proof { margin-top: var(--s-10); }
 
